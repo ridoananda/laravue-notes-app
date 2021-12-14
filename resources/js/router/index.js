@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import NoteDetail from '../views/note/Detail.vue'
+import NoteEdit from '../views/note/Edit.vue'
 import NoteCreate from '../views/note/Create.vue'
 import PageError from '../views/PageError.vue'
 import Login from '../views/Login.vue'
@@ -24,6 +25,14 @@ const routes = [
         path: '/note/create',
         name: 'NoteCreate',
         component: NoteCreate,
+        meta: {
+            auth: true
+        }
+    },
+    {
+        path: '/note/:slug/edit',
+        name: 'NoteEdit',
+        component: NoteEdit,
         meta: {
             auth: true
         }

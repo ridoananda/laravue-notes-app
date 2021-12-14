@@ -11,8 +11,6 @@ const store = createStore({
   mutations: {
     SET_USER_LOGIN(state, data){
       state.user = data
-      localStorage.setItem('note-app-user', JSON.stringify(data))
-      localStorage.setItem('note-app-loggedIn', JSON.stringify(true))
     },
     SET_NOTE(state, data){
       state.note = data
@@ -22,8 +20,6 @@ const store = createStore({
     },
     CLEAR_USER_LOGIN(state){
       state.user = null
-      localStorage.removeItem('note-app-user')
-      localStorage.removeItem('note-app-loggedIn')
     }
   },
   actions: {
@@ -50,6 +46,15 @@ const store = createStore({
         router.push('/')
       } catch (error) {
         console.log(error.response);
+      }
+    },
+    async checkUserLoggedIn({commit}){
+      try {
+          await axios.get('/api/authenticated')
+          const { data } = await axios.get('/api/user')
+          commit('SET_USER_LOGIN', data)
+      } catch (error) {
+          commit('CLEAR_USER_LOGIN')
       }
     }
   },

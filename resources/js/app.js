@@ -21,7 +21,7 @@ VueMarkdownEditor.lang.use('en-US', enUS);
 VueMarkdownEditor.use(vuepressTheme, {
     Prism,
 });
-VueMarkdownEditor.use(createMermaidPlugin())
+// VueMarkdownEditor.use(createMermaidPlugin())
 VueMarkdownEditor.use(createEmojiPlugin())
 VMdPreview.use(vuepressTheme, {
     Prism,
@@ -29,11 +29,7 @@ VMdPreview.use(vuepressTheme, {
 
 const app = createApp({
     created(){
-    //     const user = localStorage.getItem('note-app-user') || null
-    //     if (user) {
-    //         const data = JSON.parse(user)
-    //         store.commit('SET_USER_LOGIN', data)
-    //     }
+        store.dispatch('checkUserLoggedIn')
     }
 })
 app.component('navigation', Navigation)

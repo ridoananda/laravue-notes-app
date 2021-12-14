@@ -56,7 +56,9 @@ class NoteController extends Controller
      */
     public function update(UpdateNoteRequest $request, Note $note)
     {
-        //
+        $attr = $request->all();
+        $note->update($attr);
+        return response()->json(['message' => 'Note was updated!', $note]);
     }
 
     /**
@@ -67,6 +69,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return response()->json(['message' => 'Note was deleted!']);
     }
 }
