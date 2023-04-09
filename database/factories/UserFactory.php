@@ -20,7 +20,7 @@ class UserFactory extends Factory
             'email' => 'ridoananda123@gmail.com',
             'status' => 'Web Developer, Writer',
             'email_verified_at' => now(),
-            'password' => Hash::make('kartikabarus123'),
+            'password' => Hash::make('RidoGans#223303040324'),
             'remember_token' => Str::random(10),
         ];
         // return [

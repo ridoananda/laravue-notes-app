@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,6 +28,7 @@
     <link rel="icon" type="image/png" href="../assets/images/r-logo.png">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body class="antilaliased font-catamaran">
 
     <main id="app">
@@ -36,7 +38,8 @@
         </div>
     </main>
 
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <!-- <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script> -->
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
+
 </html>

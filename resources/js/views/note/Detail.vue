@@ -1,23 +1,47 @@
 <script setup>
-import { computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-const route = useRoute()
-const store = useStore()
-// onMounted(() => )
-store.dispatch('noteDetail', route.params.slug)
-const note = computed(() => store.state.note)
-// function loadNoteDetail() {
-// }
-// loadNoteDetail()
-    // store.dispatch('noteDetail')
-
+const route = useRoute();
+const store = useStore();
+store.dispatch("noteDetail", route.params.slug);
+const note = computed(() => store.state.note);
 </script>
 <template>
     <div class="py-3 pb-5 md:w-10/12 mx-auto" v-if="note">
-        <div class="text-2xl font-semibold md:text-3xl">{{ store.state.note.title }}</div>
+        <div class="text-2xl font-semibold md:text-3xl flex items-center">
+            {{ store.state.note.title }}
+            <RouterLink
+                :to="{ name: 'NoteEdit', params: { slug: note.slug } }"
+                v-if="store.getters.isLoggedIn"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-gray-600 ml-3"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                        d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z"
+                    ></path>
+                    <path d="M16 7h4"></path>
+                    <path
+                        d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3"
+                    ></path>
+                </svg>
+            </RouterLink>
+        </div>
         <div class="flex items-center space-x-2 pt-1 text-sm">
-            <div class="bg-gray-100 rounded-md pt-0.5 px-3 font-semibold">{{ note.category }}</div>
+            <div class="bg-gray-100 rounded-md pt-0.5 px-3 font-semibold">
+                {{ note.category }}
+            </div>
             <div class="text-gray-500">Published on {{ note.created_at }}</div>
         </div>
         <div class="text-gray-800 my-3 leading-7">
