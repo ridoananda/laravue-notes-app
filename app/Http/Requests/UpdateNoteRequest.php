@@ -26,7 +26,6 @@ class UpdateNoteRequest extends FormRequest
         return [
             'title' => 'required',
             'text' => 'required',
-            'category' => 'required',
         ];
     }
 }

@@ -31,7 +31,7 @@ class NoteController extends Controller
     {
         $attr = $request->all();
         $attr['user_id'] = auth()->user()->id;
-        $attr['slug'] = Str::slug($request->get('title'));
+        $attr['slug'] = Str::slug($request->get('title') . "-" . Str::random(4));
         $note = Note::create($attr);
         return response()->json(['message' => 'Notes Created!', $note]);
     }

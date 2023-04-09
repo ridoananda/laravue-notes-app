@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'title', 'category', 'slug', 'text'];
+    protected $fillable = ['user_id', 'title', 'slug', 'text'];
 
     public function user()
     {

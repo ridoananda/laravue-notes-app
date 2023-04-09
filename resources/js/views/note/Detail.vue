@@ -39,32 +39,34 @@ const note = computed(() => store.state.note);
             </RouterLink>
         </div>
         <div class="flex items-center space-x-2 pt-1 text-sm">
-            <div class="bg-gray-100 rounded-md pt-0.5 px-3 font-semibold">
-                {{ note.category }}
+            <div class="text-gray-500">
+                Dipublikasikan pada {{ note.created_at }}
             </div>
-            <div class="text-gray-500">Published on {{ note.created_at }}</div>
         </div>
         <div class="text-gray-800 my-3 leading-7">
             <v-md-preview :text="note.text"></v-md-preview>
         </div>
-        <div class="flex items-center space-x-2 mt-4">
+        <div class="flex items-center space-x-3 mt-7">
             <img
-                src="../../../assets/images/r-logo.png"
-                class="w-14 h-14 rounded-full object-cover"
+                src="../../../assets/images/profile.jpg"
+                class="w-12 h-12 rounded-full object-cover"
             />
             <div>
                 <div class="text-xl font-bold">{{ note.user.name }}</div>
-                <div class="text-sm text-gray-500">{{ note.user.status }}</div>
+                <div class="text-sm status" v-html="note.user.status"></div>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-::v-deep .vuepress-markdown-body {
+:deep(.status) > a {
+    font-weight: 600;
+}
+:deep(.vuepress-markdown-body) {
     padding: 0 !important;
     font-family: "Catamaran";
 }
-::v-deep .vuepress-markdown-body div[class*="v-md-pre-wrapper-"] {
+:deep(.vuepress-markdown-body div[class*="v-md-pre-wrapper-"]) {
     margin: 0 !important;
     border-radius: 0.5rem !important;
 }

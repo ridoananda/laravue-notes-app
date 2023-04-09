@@ -1,27 +1,30 @@
 <script setup>
-import axios from 'axios';
-import { onMounted, reactive, ref } from 'vue'
-import { useRouter } from 'vue-router';
+import axios from "axios";
+import { onMounted, reactive, ref } from "vue";
+import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
-const route = useRoute()
-const store = useStore()
-const router = useRouter()
-const handleUploadImage = () => { }
-const formData = ref('')
+const route = useRoute();
+const store = useStore();
+const router = useRouter();
+const handleUploadImage = () => {};
+const formData = ref("");
 onMounted(async () => {
-    await store.dispatch('noteDetail', route.params.slug)
-    formData.value = store.state.note
-})
+    await store.dispatch("noteDetail", route.params.slug);
+    formData.value = store.state.note;
+});
 const updateNote = async () => {
     try {
-        const { data } = await axios.put(`/api/note/${route.params.slug}`, formData.value)
+        const { data } = await axios.put(
+            `/api/note/${route.params.slug}`,
+            formData.value
+        );
         console.log(data);
-        router.push({ name: 'NoteDetail', params: { slug: data[0].slug } })
+        router.push({ name: "NoteDetail", params: { slug: data[0].slug } });
     } catch (error) {
         console.log(error.response.data);
     }
-}
+};
 </script>
 <template>
     <div class="pb-6">
@@ -32,12 +35,6 @@ const updateNote = async () => {
             class="rounded-md focus:outline-none focus:ring border px-2 py-1 block mb-4 w-full"
             placeholder="Title"
         />
-        <input
-            v-model="formData.category"
-            type="text"
-            class="rounded-md focus:outline-none focus:ring border px-2 py-1 block mb-4 w-full"
-            placeholder="Category"
-        />
         <v-md-editor
             v-model="formData.text"
             :disabled-menus="[]"
@@ -46,7 +43,12 @@ const updateNote = async () => {
             @upload-image="handleUploadImage"
         ></v-md-editor>
         <div class="flex justify-center items-center mt-5">
-            <div class="bg-gray-800 text-white py-2 px-4 rounded-lg" @click="updateNote">Edit</div>
+            <div
+                class="bg-gray-800 text-white py-2 px-4 rounded-lg"
+                @click="updateNote"
+            >
+                Edit
+            </div>
         </div>
     </div>
 </template>

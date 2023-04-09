@@ -1,17 +1,20 @@
 module.exports = {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
-    fontFamily: {
-      catamaran: ['Catamaran', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+    theme: {
+        fontFamily: {
+            catamaran: ["Catamaran", "sans-serif"],
+            serif: ["Merriweather", "serif"],
+        },
+        extend: {
+            container: {
+                padding: "1rem",
+                center: true,
+            },
+        },
     },
-    extend: {},
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
+    plugins: [require("@tailwindcss/typography")],
+};

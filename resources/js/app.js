@@ -2,6 +2,7 @@
 import { createApp } from "vue";
 import router from "./router";
 import store from "./store";
+import App from "./views/App.vue";
 import Navigation from "./components/Navigation.vue";
 
 import VueMarkdownEditor from "@kangc/v-md-editor";
@@ -33,10 +34,5 @@ VMdPreview.use(vuepressTheme, {
 });
 VueMarkdownEditor.use(createEmojiPlugin());
 
-const app = createApp({
-    created() {
-        store.dispatch("checkUserLoggedIn");
-    },
-});
-app.component("navigation", Navigation);
+const app = createApp(App);
 app.use(router).use(store).use(VMdPreview).use(VueMarkdownEditor).mount("#app");

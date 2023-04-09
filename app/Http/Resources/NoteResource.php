@@ -21,7 +21,7 @@ class NoteResource extends JsonResource
             'user' => $this->user,
             'category' => $this->category,
             'text' => $this->text,
-            'created_at' => $this->created_at->format('d F, Y'),
+            'created_at' => $this->created_at->format('d F Y'),
         ];
     }
 }

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Rido Ananda',
             'email' => 'ridoananda123@gmail.com',
-            'status' => 'Web Developer, Writer',
+            'status' => 'Author & CEO of <a href="https://ramarket.ridoananda.com">Ramarket</a>',
             'email_verified_at' => now(),
             'password' => Hash::make('RidoGans#223303040324'),
             'remember_token' => Str::random(10),
