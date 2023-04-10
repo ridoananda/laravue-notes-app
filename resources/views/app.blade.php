@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Primary Meta Tags -->
     <title>Rido's Notes</title>
-    <meta name="title" content="Rido's Notes">
-    <meta name="description" content="Baca penngalaman dan catatan hidup ku disini.">
+    <meta name="title" content="Rido's Notes | Catatan Rido">
+    <meta name="description" content="Catatan dan Pengalaman hidup dari seoranng pemuda sederhana">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://notes.ridoananda.com">
     <meta property="og:title" content="Rido's Notes | Catatan Rido">
-    <meta property="og:description" content="Baca penngalaman dan catatan hidup ku disini.">
+    <meta property="og:description" content="Catatan dan Pengalaman hidup dari seoranng pemuda sederhana">
     <meta property="og:image" content="/images/profile.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://notes.ridoananda.com">
-    <meta property="twitter:title" content="Rido's Notes">
-    <meta property="twitter:description" content="Baca catatan hidup ku disini.">
+    <meta property="twitter:title" content="Rido's Notes | Catatan Rido">
+    <meta property="twitter:description" content="Catatan dan Pengalaman hidup dari seoranng pemuda sederhana">
     <meta property="twitter:image" content="/images/profile.jpg" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
