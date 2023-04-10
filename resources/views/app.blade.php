@@ -7,25 +7,27 @@
     <!-- Primary Meta Tags -->
     <title>Rido's Notes</title>
     <meta name="title" content="Rido's Notes">
-    <meta name="description" content="See my daily notes here . . .">
+    <meta name="description" content="Baca penngalaman dan catatan hidup ku disini.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notes.ridoananda.my.id">
-    <meta property="og:title" content="Rido's Notes">
-    <meta property="og:description" content="See my daily notes here . . .">
-    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <meta property="og:url" content="https://notes.ridoananda.com">
+    <meta property="og:title" content="Rido's Notes | Catatan Rido">
+    <meta property="og:description" content="Baca penngalaman dan catatan hidup ku disini.">
+    <meta property="og:image" content="/images/profile.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:url" content="https://notes.ridoananda.com">
     <meta property="twitter:title" content="Rido's Notes">
-    <meta property="twitter:description" content="See my daily notes here . . .">
-    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <meta property="twitter:description" content="Baca catatan hidup ku disini.">
+    <meta property="twitter:image" content="/images/profile.jpg" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../assets/images/r-logo.png">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 

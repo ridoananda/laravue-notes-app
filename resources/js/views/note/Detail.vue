@@ -8,7 +8,7 @@ store.dispatch("noteDetail", route.params.slug);
 const note = computed(() => store.state.note);
 </script>
 <template>
-    <div class="py-3 pb-5 md:w-10/12 mx-auto" v-if="note">
+    <div class="py-3 md:w-10/12 mx-auto" v-if="note">
         <div class="text-2xl font-semibold md:text-3xl flex items-center">
             {{ store.state.note.title }}
             <RouterLink
@@ -46,7 +46,7 @@ const note = computed(() => store.state.note);
         <div class="text-gray-800 my-3 leading-7">
             <v-md-preview :text="note.text"></v-md-preview>
         </div>
-        <div class="flex items-center space-x-3 mt-7">
+        <div class="flex items-center space-x-3 py-4">
             <img
                 src="../../../assets/images/profile.jpg"
                 class="w-12 h-12 rounded-full object-cover"
