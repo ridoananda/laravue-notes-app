@@ -6875,6 +6875,11 @@ vue-style-loader@^4.1.3:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue3-toastify@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/vue3-toastify/-/vue3-toastify-0.1.7.tgz#d26200ae6b186a02a674bed713ffc5575bc28cc4"
+  integrity sha512-/qc4LmleP+h59SX+FtLBUcmuDeGKURaFAersrPUdL4n13PicUXZIHUFHuAOxncPzzvQKz+AtYDxq1yud3wZOUw==
+
 vue@^3.2.25:
   version "3.2.25"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.25.tgz#d271214000feeefb4a4ec1f3063f76fc1c701eb4"

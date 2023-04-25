@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\NoteController;
+use App\Http\Controllers\{NoteController, ImageController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/authenticated', function () {
 });
 Route::get('/note/{note:slug}', [NoteController::class, 'show']);
 Route::get('/note', [NoteController::class, 'index']);
+Route::post('/image/note', [ImageController::class, 'note']);
 Route::resource('note', NoteController::class)->middleware('auth:sanctum')->except(['show', 'index']);

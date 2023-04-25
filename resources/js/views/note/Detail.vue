@@ -1,11 +1,15 @@
 <script setup>
 import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { toast } from "vue3-toastify";
 import { useStore } from "vuex";
 const route = useRoute();
 const store = useStore();
 store.dispatch("noteDetail", route.params.slug);
 const note = computed(() => store.state.note);
+const handleCopyCodeSuccess = () => {
+    toast.success("Berhasil disalin!");
+};
 </script>
 <template>
     <div class="py-3 md:w-6/12 2xl:w-8/12 mx-auto" v-if="note">
@@ -44,7 +48,10 @@ const note = computed(() => store.state.note);
             </div>
         </div>
         <div class="text-gray-800 my-3 leading-7 lg:text-lg">
-            <v-md-preview :text="note.text"></v-md-preview>
+            <v-md-preview
+                :text="note.text"
+                @copy-code-success="handleCopyCodeSuccess"
+            ></v-md-preview>
         </div>
         <div class="flex items-center space-x-3 py-4">
             <img

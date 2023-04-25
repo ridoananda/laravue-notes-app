@@ -10,6 +10,10 @@ class Note extends Model
     use HasFactory;
     protected $fillable = ['user_id', 'title', 'slug', 'text'];
 
+    public function images()
+	{
+		return $this->morphMany(Image::class, 'imageable');
+	}
     public function user()
     {
         return $this->belongsTo(User::class);
