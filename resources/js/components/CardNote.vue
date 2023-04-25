@@ -34,12 +34,8 @@ const deleteNote = async (slug) => {
             class="border rounded-xl border-gray-300 px-3 py-2 mb-3 cursor-pointer block"
         >
             <div class="text-2xl font-semibold">{{ note.title }}</div>
-            <div class="text-gray-700">
-                {{
-                    note.text.length > 100
-                        ? note.text.substring(0, 110) + " . . ."
-                        : note.text
-                }}
+            <div class="text-gray-700 line-clamp-2 break-words">
+                {{ note.text }}
             </div>
             <div class="flex items-center pt-2 space-x-2 text-sm">
                 <div class="text-gray-500">

@@ -49,6 +49,7 @@ const handleCopyCodeSuccess = () => {
         </div>
         <div class="text-gray-800 my-3 leading-7 lg:text-lg">
             <v-md-preview
+                class="break-words"
                 :text="note.text"
                 @copy-code-success="handleCopyCodeSuccess"
             ></v-md-preview>
