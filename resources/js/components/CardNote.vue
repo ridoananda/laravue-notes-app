@@ -1,5 +1,8 @@
 <script setup>
 import axios from "axios";
+import { toast } from "vue3-toastify";
+import { useStore } from "vuex";
+const store = useStore();
 
 const props = defineProps({
     note: {
@@ -12,7 +15,8 @@ const deleteNote = async (slug) => {
     if (!confirmation) return;
     try {
         const { data } = await axios.delete(`/api/note/${slug}`);
-        alert(data.message);
+        store.commit("DELETE_NOTE", props.note.id);
+        toast.success(data.message);
     } catch (error) {
         console.log(error.response);
     }
@@ -42,11 +46,14 @@ const deleteNote = async (slug) => {
                     Dipublikasikan pada {{ note.created_at }}
                 </div>
                 <div
-                    class="text-gray-500"
+                    class="text-gray-500 cursor-pointer"
                     v-if="$store.getters.isLoggedIn"
                     @click.stop="deleteNote(note.slug)"
                 >
                     Hapus
+                </div>
+                <div v-if="!note.is_active" class="text-rose-600">
+                    Non aktif
                 </div>
             </div>
         </div>

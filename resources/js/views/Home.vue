@@ -1,11 +1,9 @@
 <script setup>
-import CardNote from '../components/CardNote.vue'
-import { mapState } from "vuex";
-import { computed } from '@vue/reactivity';
-import store from '../store';
-store.dispatch('noteLoad')
-const notes = computed(() => store.state.notes)
-
+import CardNote from "../components/CardNote.vue";
+import { computed } from "@vue/reactivity";
+import store from "../store";
+store.dispatch("noteLoad");
+const notes = computed(() => store.state.notes);
 </script>
 
 <template>
@@ -13,4 +11,3 @@ const notes = computed(() => store.state.notes)
         <CardNote v-for="(note, index) in notes" :key="index" :note="note" />
     </div>
 </template>
-

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'title', 'slug', 'text'];
+    protected $fillable = ['user_id', 'title', 'slug', 'text', 'is_active'];
 
     public function images()
 	{

@@ -6,12 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class NoteResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
-     */
+
     public function toArray($request)
     {
         return [
@@ -21,6 +16,7 @@ class NoteResource extends JsonResource
             'user' => $this->user,
             'category' => $this->category,
             'text' => $this->text,
+            'is_active' => $this->is_active === 1 ? true : false,
             'created_at' => $this->created_at->format('d F Y'),
         ];
     }

@@ -12,8 +12,11 @@ class NoteController extends Controller
 {
     public function index()
     {
-        $note = Note::with('user')->latest()->get();
-        return NoteResource::collection($note);
+        $note = Note::with('user');
+        if(!auth()->check()) {
+            $note->where("is_active", 1);
+        }
+        return NoteResource::collection($note->latest()->get());
     }
 
     public function store(StoreNoteRequest $request)
@@ -28,6 +31,9 @@ class NoteController extends Controller
 
     public function show(Note $note)
     {
+        if(!auth()->check()) {
+            abort_if($note->is_active === 0, 404);
+        }
         return new NoteResource($note);
     }
 

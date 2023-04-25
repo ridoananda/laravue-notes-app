@@ -14,6 +14,7 @@ const note = computed(() => store.state.note);
 const formData = reactive({
     title: "",
     text: "",
+    is_active: 0,
 });
 
 watch(note, (val) => {
@@ -50,6 +51,15 @@ const handleCopyCodeSuccess = () => {
         class="rounded-md focus:outline-none focus:ring border px-2 py-1 block mb-4 w-full"
         placeholder="Title"
     />
+    <div class="mb-4">
+        <input
+            type="checkbox"
+            v-model="formData.is_active"
+            id="is_active"
+            class="mr-2"
+        />
+        <label for="is_active">Active</label>
+    </div>
     <v-md-editor
         v-model="formData.text"
         :disabled-menus="[]"
