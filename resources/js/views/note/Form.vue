@@ -20,6 +20,7 @@ const formData = reactive({
 watch(note, (val) => {
     formData.title = val.title;
     formData.text = val.text;
+    formData.is_active = val.is_active;
 });
 const handleUploadImage = async (event, insertImage, files) => {
     let formData = new FormData();

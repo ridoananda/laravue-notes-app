@@ -16,7 +16,7 @@ class NoteResource extends JsonResource
             'user' => $this->user,
             'category' => $this->category,
             'text' => $this->text,
-            'is_active' => $this->is_active === 1 ? true : false,
+            'is_active' => $this->is_active == 1 ? true : false,
             'created_at' => $this->created_at->format('d F Y'),
         ];
     }
